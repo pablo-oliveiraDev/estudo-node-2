@@ -1,0 +1,29 @@
+{
+  "name": "estudo-node-2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon",
+    "lint": "eslint --ext .js,.html -f ./node_modules/estlint-friendly-formater . fix",
+    "prepush": "npm run lint",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.10.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "husky": "^7.0.4",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "eslint-friendly-formatter": "^4.0.1",
+    "express": "^4.17.3",
+    "express-promise-router": "^4.1.1",
+    "pg": "^8.7.3"
+  },
+  "description": ""
+}
