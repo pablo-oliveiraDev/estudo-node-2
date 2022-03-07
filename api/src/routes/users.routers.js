@@ -14,9 +14,21 @@ const usersControllers = require('../controlles/users.controllers.js');
 
 router.post('/users', usersControllers.createUsers);
 
-module.exports = router;
+
 
 //rota responsavel por selecionar todos users: (get)
 
 router.get('/users', usersControllers.listAllUsers)
+
+
+//rota responsavel por selecionar o user pelo id:(get)
+
+router.get('/users/:id', usersControllers.findUserById);
+
+//rota responsavel pela atualização de users
+router.update('/users/:id', usersControllers.updateUsersById);
+
+//rota responsavel por deletar user;
+router.delete('/users/:id', usersControllers.deleteUsersById);
+
 module.exports = router;

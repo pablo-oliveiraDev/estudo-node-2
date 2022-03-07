@@ -9,17 +9,17 @@ const db = require('../config/database');
 // método responsavel por criar um novo user
 
 exports.createUsers = async (req, res) => {
-    const { nome, id, status, email, senha } = req.body;
+    const { nome, status, email, senha,id } = req.body;
     const response = await db.query(
-        'INSERT INTO users (nome,status,email,senha) VALUES ($1, $2, $3, $4)',
-        [nome, status, email, senha],
+        'INSERT INTO users (nome,status,email,senha,id) VALUES ($1, $2, $3, $4,$5)',
+        [nome, status, email, senha,id],
         
     );
 
     res.status(201).send({
         message: 'User added succefully',
         body: {
-            user: { nome, status, email, senha }
+            user: { nome, status, email, senha,id }
         },
     });
 };
@@ -29,4 +29,13 @@ exports.createUsers = async (req, res) => {
 exports.listAllUsers = async (req, res) => {
     const response = await db.query('SELECT * FROM users ORDERS BY nome ASC');
     res.status(200).send(response.rows);
+}; 
+//metodo responsavel pela busca de usuario pelo id
+
+exports.findUserById =async (req,res) =>{
+    const userId= parseInt(req.params.id);
+    const response =await db.query('SELECT * FROM users where id=$5',[id]);
+
 };
+
+//

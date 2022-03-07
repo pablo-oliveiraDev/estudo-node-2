@@ -1,14 +1,23 @@
 {
   "name": "estudo-node-2",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
+  
   "scripts": {
     "dev": "nodemon",
     "lint": "eslint --ext .js,.html -f ./node_modules/estlint-friendly-formater . fix",
     "prepush": "npm run lint",
     "start": "node server.js"
   },
-  "keywords": [],
+  "keywords": [
+    "nodejs",
+    "postgresql",
+    "crud",
+    "azure",
+    "node-postgres"
+
+  ],
+
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -26,5 +35,5 @@
     "express-promise-router": "^4.1.1",
     "pg": "^8.7.3"
   },
-  "description": ""
+  "description": "Aplicação CRUD com node.js + PostgreSQL + Azure"
 }
