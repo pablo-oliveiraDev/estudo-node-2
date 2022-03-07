@@ -7,11 +7,16 @@
  */
 
 const router = require('express-promise-router')();
-const usersControle = require('../controlles/users.controllers');
+const usersControllers = require('../controlles/users.controllers.js');
 // =>definindo as rotas do crud -Users
 
 //rota responsável por criar novo usuário (user)
 
-router.post('/users', usersControle.createUsers);
+router.post('/users', usersControllers.createUsers);
 
+module.exports = router;
+
+//rota responsavel por selecionar todos users: (get)
+
+router.get('/users', usersControllers.listAllUsers)
 module.exports = router;
